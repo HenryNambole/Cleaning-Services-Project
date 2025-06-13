@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5bfcda5879.js" crossorigin="anonymous"></script>
+    <title>NeatNest</title>
+</head>
+<body>
+    <section class="nav-section">
+        <div class="nav-bar">
+            <div class="nav-left-section">
+                <div class="logo"><span>Neat</span>Nest</div>
+                <nav id="navbar">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" onclick="toggleDropdown(event, 'services')">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="#">Home Cleaning</a>
+                                <a href="#">Office Cleaning</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" onclick="toggleDropdown(event, 'resources')">Resources</a>
+                            <div class="dropdown-menu">
+                                <a href="#">Blog</a>
+                                <a href="#">Guides</a>
+                            </div>
+                        </li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                    <a href="#" class="nav-cta-btn mobile-only">Request a Quote</a>
+                </nav>
+            </div>
+
+            <!-- Desktop version (hidden on mobile) -->
+            <a href="#" class="nav-cta-btn">Request a Quote</a>
+
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </section>
+    <script>
+        function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('active');
+        }
+
+        function toggleDropdown(event, dropdownId) {
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            event.stopPropagation();
+            const dropdown = event.target.parentElement;
+
+            document.querySelectorAll('.dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+            });
+
+            dropdown.classList.toggle('open');
+        }
+        }
+
+        document.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('open');
+            });
+        }
+        });
+    </script>
+    <section class="hero-section">
+        <div class="hero-continer">
+            <h1>Embrace<br> Spotless Living.</h1>
+            <p>Discover the professional difference with NeatNest - where<br>every detail counts in crafting your impeccably clean space.</p>
+            <button class="cta-btn2">Request a Quote</button>
+        </div>
+    </section>
+    <section class="partner-section">
+        <div class="partner-container">
+            <div class="partner-left">
+                <p id="left-p">Happy Homes & Businesses Sparkling with NeatNest.</p>
+            </div>
+            <div class="partner-logos">
+                <div class="eco-logo">
+                    <img src="./assets/eco.png" alt="">
+                    <img src="./assets/ecotech.png" alt="">
+                </div>
+                <div>
+                    <img src="./assets/grime.png" alt="">
+                </div>
+                <div class="star-logo">
+                    <img src="./assets/star.png" alt="">
+                    <img src="./assets/starglow.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="success-section">
+        <div class="success-container">
+            <div class="success-left">
+                <img src="./assets/success2.png" alt="">
+            </div>
+            <div class="success-right">
+                <h1>Our Journey in<br>Sparkling Success</h1>
+                <div class="num-1">
+                    <div class="num">
+                        <p id="numbers">5,000+</p>
+                        <p>Homes & Office Cleaned</p>
+                    </div>
+                    <div class="num">
+                        <p id="numbers">98%</p>
+                        <p>Customer Satisfaction Rate</p>
+                    </div>
+                </div>
+                <div class="num-2">
+                    <div class="num">
+                        <p id="numbers">1 M+</p>
+                        <p>Square Foot Cleaned</p>
+                    </div>
+                    <div class="num">
+                        <p id="numbers">300+</p>
+                        <p>Glowing Testimonials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-title">
+                <p id="services-small">Our services</p>
+                <h1>Your Trusted Partner for a Cleaner, Happier Home</h1>
+                <p id="services-p">We Understand that your home is not just a place; it's where your life happens, and<br>we're here to help you keep it in top shape.</p>
+            </div>
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="./assets/home-icon.png" id="service-icon" alt="">
+                    </div>
+                    <div class="service-card-title">
+                        <h1>Residential Cleaning</h1>
+                    </div>
+                    <p>From your cozy living room to the heart of your home-the kitchen-we leave no stone unturned,giving you a spotless space to relax in.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img2">
+                        <img src="./assets/shop-icon.png" id="service-icon" alt="">
+                    </div>
+                    <div class="service-card-title">
+                        <h1>Commercial Cleaning</h1>
+                    </div>
+                    <p>We use cutting-edge techniques and eco-friendly products to create a workspace that reflects your professionalism.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img">
+                        <img src="./assets/window-icon.png" id="service-icon" alt="">
+                    </div>
+                    <div class="service-card-title">
+                        <h1>Window Cleaning</h1>
+                    </div>
+                    <p>Our expert window cleaners make it a reality. We take care of those hard-to-reach spots, so you can enjoy the view without the hassle.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-img2">
+                        <img src="./assets/broom.png" id="service-icon" alt="">
+                    </div>
+                    <div class="service-card-title">
+                        <h1>Deep Cleaning</h1>
+                    </div>
+                    <p>We dive deep into every crevice,banishing dust,grime, and allergens, so you can breathe easy and enjoy a refreshed living space.</p>
+                </div>
+            </div>
+            <div class="services-btn">
+                <button class="service-btn">Learn More</button>
+            </div>
+        </div>
+    </section>
+    <section class="team-section">
+        <div class="team-container">
+            <p id="team-small">The Team</p>
+            <h1>The team behind NeatNest</h1>
+            <p id="team-p">Meet the dedicated professionals at NeatNest who are passionate about transforming spaces and creating pristine environments. We're a close-knit team committed to providing you with exceptional cleaning services that make your life easier.</p>  
+        </div>
+    </section>
+    <section class="team-section2">
+        <div class="team-container2">
+            <div class="team-card">
+                <div class="team-image">
+                    <img id="team-img" src="./assets/team1.png" alt="">
+                </div>
+                <h1>Jenny Wilson</h1>
+                <p class="team-p1">Residential Cleaning</p>
+                <p class="team-p2">with 10+ years of house Cleaning experience, Jenny ensures your home is a clean and comfortable haven.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-image2">
+                    <img id="team-img" src="./assets/team2.png" alt="">
+                </div>
+                <h1>Eleanor Pena</h1>
+                <p class="team-p1">Commercial Cleaner</p>
+                <p class="team-p2">with 8 years of industry experience, Eleanor designs effective cleaning processes and maintains your space's pristine appearance.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <img id="team-img" src="./assets/team3.png" alt="">
+                </div>
+                <h1>Devon Lane</h1>
+                <p class="team-p1">Window Cleaner</p>
+                <p class="team-p2">With 12 years of experience, Devon ensures your cleaning experience is smooth and enjoyable from start to finish.</p>
+            </div>
+            <div class="team-card">
+                <div class="team-image2">
+                    <img id="team-img" src="./assets/team4.png" alt="">
+                </div>
+                <h1>Annette Black</h1>
+                <p class="team-p1">Deep Cleaning</p>
+                <p class="team-p2">with a decade of experience, Annette is our expert in deep cleaning. She goes the extra mile to rejuvenate and refresh your space.</p>
+            </div>
+        </div>
+    </section>
+    <section class="stat-section">
+        <div class="stat-container">
+            <div class="stat-left">
+                <h1>500+</h1>
+                <p>Satisfied Customers</p>
+            </div>
+            <div class="stat-middle">
+                <h1>100%</h1>
+                <p>Cleaner Environment</p>
+            </div>
+            <div class="stat-right">
+                <h1>5k</h1>
+                <p>Successful cleaning projects</p>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <h1>Absolutely thrilled with the cleaning service! They left<br>my home spotless, and the attention to detail was<br>amazing. Highly recommended!</h1>
+            <img src="./assets/test.png" alt="">
+            <h2>Dianne Russell</h2>
+            <p>Investment Risk and Strategy Professional</p>
+            <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="pagination">
+                <div class="active"></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+    <section class="contactus-section">
+        <div class="contactus-container">
+            <div class="contact-us">
+                <p>Contact us</p>
+            </div>
+            <div class="contact-header">
+                <h1>Chat to our friendly team</h1>
+                <p class="subtitle">We'd love to hear from you! Please get in touch.</p>
+            </div>
+            
+            <div class="contact-us-container">
+                <div class="image-contactus-container">
+                    <img src="/assets/contact-us.png" alt="Friendly cleaning team with equipment standing in an office">
+                </div>
+                
+                <div class="form-container">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First name</label>
+                                <input type="text" id="firstName" placeholder="First name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last name</label>
+                                <input type="text" id="lastName" placeholder="Last name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="you@company.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Leave us a message..."></textarea>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent">
+                            <label for="consent">You consent to our amicable <a href="#">privacy policy</a>.</label>
+                        </div>
+                        <button class="contactus-cta-btn" type="submit">Request a Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
+        <div class="faq-title">
+            <h1>Frequently asked questions</h1>
+            <p>Everything you need to know about the product and billing.</p>
+        </div>
+        <div class="questions">
+            <div class="question">
+                <div class="faq">
+                    <p class="faq-ans">Is your cleaning staff trained and experienced?</p>
+                    <p>Yes, our cleaning staff is highly trained,experienced, and dedicated to providing top-quality cleaning<br>services. We conduct thorough background checks and ensure our team is well-equipped to deliver<br>outstanding results.</p>
+                </div>
+                <i class="fa-solid fa-angle-up"></i>
+            </div>
+            <div class="question">
+                <div class="faq">
+                    <p>Are your cleaning products safe for my family and pets?</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="question">
+                <div class="faq">
+                    <p>How often should I schedule cleaning services</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="question">
+                <div class="faq">
+                    <p>Can I customize the cleaning services to fit my requirements?</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="question">
+                <div class="faq">
+                    <p>What if I need to reschedule or cancel a cleaning appointment?</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="question">
+                <div class="faq">
+                    <p>Are You insured and bonded?</p>
+                </div>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="discover-section">
+        <div class="discover-container">
+            <div class="discover-left">
+                <h1>Rediscover the Brillance<br> of Your Space Today!</h1>
+                <p>Let us transform your surroundings with our<br>exceptional cleaning services. </p>
+                <button class="discover-btn">Request a Quote</button>
+            </div>
+            <div class="discover-right">
+                <img src="./assets/clean1.png" alt="">
+                <img src="./assets/clean2.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="footer-section">
+        <div class="footer-text">
+            <p class="foot-title"><span>Neat</span>Nest</p>
+            <h1>Let's start creating a cleaner environment</h1>
+            <p class="foot-title2">Join over 4,000+ satisfied customers who have experienced the<br>difference with NeatNest.</p>
+            <button class="footer-btn">Request a Quote</button>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <i class="fa-regular fa-copyright"></i>
+                <span>2025 Neat Nest LLC. All rights reserved.</span>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="http://">Terms</a></li>
+                    <li><a href="http://">Privacy</a></li>
+                    <li><a href="http://">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
