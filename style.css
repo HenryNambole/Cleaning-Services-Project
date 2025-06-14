@@ -1190,7 +1190,7 @@ textarea {
 
  /* FAQ - SECTION */
 
-.faq-section {
+/*.faq-section {
     background-color: #2A325D;
     color: #ffffff;
     padding-bottom: 60px;
@@ -1257,8 +1257,112 @@ textarea {
     .question p {
         font-size: 16px;
     }
+}*/
+
+
+/* FAQ Section */
+.faq {
+    background:  #2A325D;
+    padding: 6rem 0;
 }
 
+.faq-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    /*padding: 0 20px;*/
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.faq-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #F2F2F2;
+    letter-spacing: 0.5px;
+}
+
+.faq-subtitle {
+    text-align: center;
+    color: #F2F2F2;
+    margin-bottom: 4rem;
+    letter-spacing: 0.5px;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #F2F2F2;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-weight: 550;
+    color: #F2F2F2;
+    transition: color 0.3s ease;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+.faq-question:hover {
+    color:  #576DB5;
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    padding-bottom: 1.5rem;
+    color: #F2F2F2;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+@media (max-width: 820px) {
+    .faq-title h1 {
+        font-size: 30px;
+    }
+
+    .faq-title p {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .questions {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .question p {
+        font-size: 16px;
+    }
+}
 
 
 
@@ -1342,9 +1446,11 @@ textarea {
     }
 
     .discover-right img {
-        width: 100%;
+        width: 180px;
         /*max-width: 300px;*/ /* Adjust as needed */
     }
+
+
 }
 
 
