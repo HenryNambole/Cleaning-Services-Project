@@ -337,6 +337,7 @@ nav {
     align-items: center;
 }
 
+
 .star-logo {
     display: flex;
     gap: 0.5rem;
@@ -351,11 +352,22 @@ nav {
 }
 
 @media (max-width: 850px) {
-    .partner-logos img {
+    /*.partner-logos img {
         width: 100px;
-        height: 50px;
+        height: 40px;
         object-fit: contain;
+    }*/
+
+    .star {
+        max-width: 30px;
     }
+
+    .eco {
+        width: 20px;
+        height: 20px;
+    }
+
+
 }
 
     
@@ -373,8 +385,8 @@ nav {
     .partner-logos {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding-top: 10px;
+        gap: 1.5rem;
+        padding-top: 20px;
     }
 
     #left-p {
@@ -705,6 +717,8 @@ nav {
     height: 280px;
 }
 
+
+
 .team-p1 {
     color: #576DB5;
     font-size: 19px;
@@ -726,6 +740,7 @@ nav {
         max-width: 400px;
         /*max-width: 100%;*/
         padding-top: 20px;
+        /*max-height: 500px;*/
     }
 
    /*.team-image {
@@ -744,6 +759,8 @@ nav {
     #team-p {
         font-size: 16px;
     }
+
+
 }
 
 
